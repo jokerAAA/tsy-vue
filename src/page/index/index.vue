@@ -5,7 +5,9 @@
 </template>
 
 <script>
-    import {getIndexData } from '../../service/getData';
+    // import {getIndexData } from '../../service/getData';
+    // import axios from "@/uitls/axios";
+    import axios from 'axios';
     export default {
         data:function() {
             return {
@@ -20,9 +22,15 @@
 
         methods:{
 
-            async initData() {
-               let data  = await getIndexData();
-            },
+            // async initData() {
+            //    let data  = await getIndexData();
+            // },
+            initData() {
+                axios.get('/api/indexpage/index/index')
+                .then(function(res) {
+                    console.log(res);
+                })
+            }
 
             
 
