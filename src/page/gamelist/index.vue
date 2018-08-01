@@ -4,7 +4,7 @@
             
         </section>
 
-        <section class="list" v-bind:style="{height:scrollHeight,color:red}">
+        <section class="list" v-bind:style="{height:scrollHeight}">
             <aside class="letter">
                 <div class="letter-items" v-for="item in letterArr" v-bind:key="item">
                     {{item}}
@@ -33,7 +33,6 @@
                gameArr:[],
                activeLetter:'hot' ,
                scrollHeight:44 ,
-               red: 'red'
             }
         },
         created() {
@@ -88,7 +87,7 @@
 
 .list {
     display: flex;
-    height:calc(100% - 44px);
+    height:calc(100vh - 44px);
     text-align: center;
     background:#fff;
     color:#333;
