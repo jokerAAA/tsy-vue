@@ -1,13 +1,13 @@
 <template>
-    <div class="contaner">
+    <div class="container">
         <section class="search" ref="search">
             
         </section>
 
         <section class="list" v-bind:style="{height:scrollHeight}">
             <aside class="letter">
-                <div class="letter-items" v-for="item in letterArr" v-bind:key="item">
-                    {{item}}
+                <div :class="activeLetter == item ? 'active-letter letter-items' : 'letter-items'" v-for="item in letterArr" v-bind:key="item" @click='changeLetter(item)'>
+                    {{item == 'hot' ? '热' : item}}
                 </div>
             </aside>
 
@@ -45,11 +45,12 @@
 
         methods:{
             init() {
-                this.getGamelist();
+                const letter = this.letter ;
+                this.getGamelist(letter);
             },
-            getGamelist() {
+            getGamelist(letter) {
                 const that = this ;
-                axios.get('api/games/list/index')
+                axios.get(`api/games/list/index?letter=${letter}`)
                 .then((res)=> {
                     const data = res.data.data;
                     this.renderData(data);
@@ -65,6 +66,10 @@
             setHeight() {
                 let height = this.$refs.search.clientHeight;
                 this.scrollHeight = window.screen.height - height ;
+            },
+            changeLetter(letter) {
+                this.activeLetter = letter ;
+                this.getGamelist(letter);
             }
         }
     }
