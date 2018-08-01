@@ -1,7 +1,7 @@
 <template>
     <div class="container">
         <section class="search" ref="search">
-            
+            这是搜索游戏模块，暂时不做
         </section>
 
         <section class="list" v-bind:style="{height:scrollHeight}">
@@ -12,10 +12,12 @@
             </aside>
 
             <main class="game">
-                <div class="game-items" v-for="item in gameArr" :key="item.id">
-                    <img :src="item.pic" alt="" class="game-items-img">
-                    <p class="game-items-text">{{item.name}}</p>
-                </div>
+                <router-link :to="{ path:'/games/list',query:{gameid:item.id}}" v-for="item in gameArr" :key="item.id">
+                    <div class="game-items" >
+                        <img :src="item.pic" alt="" class="game-items-img">
+                        <p class="game-items-text">{{item.name}}</p>
+                    </div>
+                </router-link>
             </main>
         </section>
 
@@ -148,6 +150,7 @@
         overflow:hidden;
         text-overflow: ellipsis;
         word-break: break-all;
+        white-space: nowrap;
         line-height: 46px;
     }
 }
