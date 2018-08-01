@@ -12,7 +12,7 @@
             </aside>
 
             <main class="game">
-                <router-link :to="{ path:'/games/list',query:{gameid:item.id}}" v-for="item in gameArr" :key="item.id">
+                <router-link :to="{ path:'/goods/list',query:{gameid:item.id}}" v-for="item in gameArr" :key="item.id">
                     <div class="game-items" >
                         <img :src="item.pic" alt="" class="game-items-img">
                         <p class="game-items-text">{{item.name}}</p>
