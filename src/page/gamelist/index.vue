@@ -6,7 +6,7 @@
 
         <section class="list" v-bind:style="{height:scrollHeight}">
             <aside class="letter">
-                <div :class="activeLetter == item ? 'active-letter letter-items' : 'letter-items'" v-for="item in letterArr" v-bind:key="item" @click='changeLetter(item)'>
+                <div class="letter-items" :class="{'active-letter' : activeLetter==item}" v-for="item in letterArr" v-bind:key="item" @click='changeLetter(item)'>
                     {{item == 'hot' ? '热' : item}}
                 </div>
             </aside>
