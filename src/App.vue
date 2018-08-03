@@ -74,6 +74,8 @@ input[type="submit"],
 textarea {
   -webkit-appearance: none;
   border-radius: 0;
+  border:none;
+  outline: none;
 }
 
 ::-webkit-scrollbar {
