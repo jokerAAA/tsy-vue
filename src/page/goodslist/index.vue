@@ -168,7 +168,9 @@ export default {
 
     /* 选择区服 */
     chooseArea(areaid) {
-
+        this.query.areaid = areaid ;
+        this.showType = '';
+        this.getGoodslist();
     },
 
     /* 匹配输入 */
@@ -178,7 +180,7 @@ export default {
 
     /* 搜索输入 */
     searchArea() {
-
+        
     },
 
     /* 选择排序 */
@@ -217,6 +219,11 @@ export default {
 
 .container {
     text-align: left;
+}
+
+.mask {
+    top:40px;
+    height:calc(100% - 40px);
 }
 
 /* 菜单栏 */

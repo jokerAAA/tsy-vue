@@ -119,6 +119,10 @@ textarea {
     z-index:10;
 }
 
+.red {
+  color:#ff3434;
+}
+
 @keyframes slideInLeft {
 	from {
 		transform: translate3d(-100%, 0, 0);
