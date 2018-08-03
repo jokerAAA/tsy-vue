@@ -1,11 +1,13 @@
 <template>
     <section class="container">
+        <!-- 菜单栏 -->
         <div class="menu">
 			<div class="menu-item">成品号</div>
-			<div class="menu-item">服务器</div>
-			<div class="menu-item">排序</div>
-			<div class="menu-item">筛选</div>
+			<div class="menu-item" @click="showMask('server')">服务器</div>
+			<div class="menu-item" @click="showMask('sort')">{{sortText}}</div>
+			<div class="menu-item" @click="showMask('info')">筛选</div>
 		</div>
+        <!-- 商品列表 -->
 		<div class="list">
 			<router-link :to="{path:'/goods/detail',query:{id:item.id}}" v-for="item in goodsList"  v-bind:key="item.id">
 				<div class="goods" >
@@ -27,6 +29,27 @@
 				</div>
 			</router-link>
 		</div>
+        <!-- 排序菜单 -->
+        <!-- 选择排序方式 -->
+        <div class="mask"  @click="closeMask" v-if="showType == 'sort'">
+            <div class="sort">
+                <div class="sort-item" :class="{'activeSort':query.sort == 0 }" @click="chooseSort(0)">
+                    <span class="sort-item-name">默认排序</span>
+                </div>
+                <div class="sort-item" :class="{'activeSort':query.sort == 2 }" @click="chooseSort(2)">
+                    <span class="sort-item-name">价格从高到低</span>
+                </div>
+                <div class="sort-item" :class="{'activeSort':query.sort == 1 }" @click="chooseSort(1)">
+                    <span class="sort-item-name">价格从低到高</span>
+                </div>
+                <div class="sort-item" :class="{'activeSort':query.sort == 9 }" @click="chooseSort(9)">
+                    <span class="sort-item-name">发布时间倒序</span>
+                </div>
+                <div class="sort-item" :class="{'activeSort':query.sort == 10 }" @click="chooseSort(10)">
+                    <span class="sort-item-name">发布时间正序</span>
+                </div>
+            </div>
+        </div>
     </section>
 
 </template>
@@ -40,8 +63,11 @@ export default {
       query: {
         gameid: "",
 		goodsid: 1 ,
-		page : 1 ,
+        page : 1 ,
+        sort: 0
       },
+      sortText:'排序',
+      showType: '' ,
       goodsList: []
     };
   },
@@ -79,6 +105,7 @@ export default {
     getGoodslist() {
       const query = this.query;
       const that = this;
+      this.showType = '';
       axios
         .get("/api/trades/list/indexpager", {
           params: query
@@ -87,12 +114,40 @@ export default {
           const data = res.data.data;
           that.goodsList = data;
         });
+    },
+
+    /*  */
+    chooseSort(sortid) {
+        let text = '';
+        if (sortid == '1' || sortid == '2') {
+            text = '价格'
+        }else if (sortid == '9' || sortid == '10') {
+            text = '时间'
+        }else {
+            text = '默认'
+        }
+        this.query.sort = sortid ;
+        this.sortText = text ;
+        this.getGoodslist();
+    },
+
+    /* 关闭mask */
+    closeMask() {
+        this.showType = '';
+    },
+
+    showMask(type) {
+        this.showType = type ;
     }
   }
 };
 </script>
 
 <style scoped lang='less'>
+
+.container {
+    text-align: left;
+}
 
 /* 菜单栏 */
 .menu {
@@ -200,15 +255,36 @@ export default {
     font-size: 10px;
 }
 
-.goods-area-text {
+.goods-area-span {
     line-height: 10px;
 }
 
-.goods-area-text:nth-of-type(1) {
+.goods-area-span:nth-of-type(1) {
     padding-right: 10px;
     margin-right: 10px;
     border-right: 1px solid #999;
 }
 
-.goods-area-text:nth-of-type(2) {}
+.goods-area-span:nth-of-type(2) {}
+
+/* 排序下拉 */
+.sort {
+    background:#fff;
+    animation: slideDown 0.2s linear; 
+}
+
+
+.sort-item {
+    height:40px;
+    line-height: 40px;
+    padding-left: 30px;
+}
+
+.activeSort {
+    color:red;
+}
+
+.sort-item-name {
+    font-size: 14px;
+}
 </style>
