@@ -1,13 +1,13 @@
 <template>
     <div>
         <div class="header">
-            <div class="header-left icon">
+            <div class="header-left icon" @click="goBack">
 
             </div>
             <div class="header-center">
                 {{title}}
             </div>
-            <div class="header-right icon">
+            <div class="header-right icon" @click="goHome">
 
             </div>
         </div>
@@ -25,10 +25,12 @@
 
         methods:{
             goBack() {
-
+                this.$router.go(-1);
             },
             goHome() {
-
+                this.$router.push({
+                    path:'/'
+                })
             }
         },
 
