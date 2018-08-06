@@ -4,7 +4,7 @@
             这是搜索游戏模块，暂时不做
         </section>
 
-        <section class="list" v-bind:style="{height:scrollHeight}">
+        <section class="list" :style="{'height':scrollHeight}">
             <aside class="letter">
                 <div class="letter-items" :class="{'active-letter' : activeLetter==item}" v-for="item in letterArr" v-bind:key="item" @click='changeLetter(item)'>
                     {{item == 'hot' ? '热' : item}}
@@ -67,7 +67,7 @@
             },
             setHeight() {
                 let height = this.$refs.search.clientHeight;
-                this.scrollHeight = window.screen.height - height ;
+                this.scrollHeight = (window.screen.height - height) + 'px' ;
             },
             changeLetter(letter) {
                 this.activeLetter = letter ;
