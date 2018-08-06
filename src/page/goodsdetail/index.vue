@@ -1,14 +1,18 @@
 <template>
     <div class="container">
+        <Header title="商品详情"></Header>
         <Swiper :data="piclist" v-if="piclist.length > 0"></Swiper>
         <Goodstitle :item="trade"></Goodstitle>
     </div>
 </template>
 
 <script>
-    import axios from '@/utils/axios';
+    import Header from '@/components/common/header'
     import Goodstitle from '../common/goodstitle';
     import Swiper from '@/components/ui/swiper';
+
+    import axios from '@/utils/axios';
+    
 
     export default {
         data:function() {
@@ -19,6 +23,7 @@
         },
 
         components:{
+            Header,
             Goodstitle,
             Swiper
         },

@@ -1,5 +1,6 @@
 <template>
     <section class="container">
+        <Header title="商品列表"></Header>
         <!-- 菜单栏 -->
         <div class="menu">
 			<div class="menu-item">成品号</div>
@@ -7,6 +8,7 @@
 			<div class="menu-item" @click="showMask('sort')">{{sortText}}</div>
 			<div class="menu-item" @click="showMask('info')">筛选</div>
 		</div>
+        
 
         
         <!-- 商品列表 -->
@@ -62,8 +64,10 @@
 </template>
 
 <script>
-import axios from "@/utils/axios";
+import Header from '@/components/common/header';
 import Goodstitle from '../common/goodstitle';
+
+import axios from "@/utils/axios";
 
 export default {
   data: function() {
@@ -86,6 +90,7 @@ export default {
   },
 
   components:{
+      Header,
       Goodstitle
   },
 
