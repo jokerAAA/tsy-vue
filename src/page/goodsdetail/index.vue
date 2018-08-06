@@ -86,10 +86,12 @@
 </script>
 
 <style scoped lang='less'>
+    
+.container {
+    background:#f2f3f6;
+}
 
-
-    /* tab栏 */
-
+/* tab栏 */
 .tab {
     display: flex;
     height: 40px;
