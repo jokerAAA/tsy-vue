@@ -16,11 +16,11 @@ export default {
   },
   watch: {
     $route(to, from) {
-      if (to.meta.index > from.meta.index) {
+      /* if (to.meta.index > from.meta.index) {
         this.transitionName = "slide-left";
       } else {
         this.transitionName = "slide-right";
-      }
+      } */
     }
   }
 };
