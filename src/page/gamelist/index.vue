@@ -1,17 +1,17 @@
 <template>
     <div class="container">
         <Header title="游戏列表" ref="header"></Header>
-
+        <!-- 游戏列表 -->
         <section class="list" :style="{'height':scrollHeight}">
             <aside class="letter">
                 <div class="letter-items" :class="{'active-letter' : activeLetter==item}" v-for="item in letterArr" v-bind:key="item" @click='changeLetter(item)'>
                     {{item == 'hot' ? '热' : item}}
                 </div>
             </aside>
-
             <main class="game">
                 <router-link :to="{ path:'/goods/list',query:{gameid:item.id}}" v-for="item in gameArr" :key="item.id">
                     <div class="game-items" >
+                        <!-- 图片有防盗链设置，暂未添加lazyload -->
                         <img :src="item.pic" alt="" class="game-items-img">
                         <p class="game-items-text">{{item.name}}</p>
                     </div>

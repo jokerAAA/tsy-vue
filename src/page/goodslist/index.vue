@@ -8,9 +8,6 @@
 			<div class="menu-item" @click="showMask('sort')">{{sortText}}</div>
 			<div class="menu-item" @click="showMask('info')">筛选</div>
 		</div>
-        
-
-        
         <!-- 商品列表 -->
 		<div class="list">
 			<router-link :to="{path:'/goods/detail',query:{id:item.id}}" v-for="item in goodsList"  v-bind:key="item.id">
@@ -206,7 +203,6 @@ export default {
     stopPropagation(e) {
         e.stopPropagation();
     }
-    
   }
 };
 </script>
@@ -242,8 +238,6 @@ export default {
 	background:#f5f5f5;
 }
 
-
-/* 服务器下拉 */
 /* 服务器下拉 */
 .server {
     background:#fff;

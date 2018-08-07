@@ -1,9 +1,11 @@
 <template>
     <div class="container">
         <Header title="商品详情"></Header>
+        <!-- 轮播图 -->
         <Swiper :data="piclist" v-if="piclist.length > 0"></Swiper>
+        <!-- 商品标题 -->
         <Goodstitle :item="trade"></Goodstitle>
-
+        <!-- tab栏 -->
         <div class="tab">
             <div class="tab-item" :class="{'active-tab':activeTab == 0}" @click="changeTab(0)">
                 商品信息
@@ -12,8 +14,10 @@
                 购买流程
             </div>
         </div>
-        <Process :isShow=" activeTab ==  1 "></Process>
+        <!-- 商品信息 -->
         <Info :game="game" :trade="trade" :goodsname="goodsname" :extensionAttr="extensionAttr" :isShow=" activeTab == 0 "></Info>
+        <!-- 购买流程 -->
+        <Process :isShow=" activeTab ==  1 "></Process>
     </div>
 </template>
 
@@ -23,9 +27,7 @@
     import Swiper from '@/components/ui/swiper';
     import Process from './children/process';
     import Info from './children/info';
-
     import axios from '@/utils/axios';
-    
 
     export default {
         data:function() {
@@ -119,7 +121,6 @@
     line-height: 40px;
     position: relative;
 }
-
 
 .active-tab {
     color: #ff3434;
