@@ -1,8 +1,6 @@
 <template>
     <div class="container">
-        <section class="search" ref="search">
-            这是搜索游戏模块，暂时不做
-        </section>
+        <Header title="游戏列表" ref="header"></Header>
 
         <section class="list" :style="{'height':scrollHeight}">
             <aside class="letter">
@@ -25,6 +23,7 @@
 </template>
 
 <script>
+    import Header from '@/components/common/header';
     import axios from '@/utils/axios';
     export default {
         data:function() {
@@ -37,6 +36,11 @@
                scrollHeight:44 ,
             }
         },
+
+        components:{
+            Header
+        },
+
         created() {
             this.init()
         },
@@ -66,7 +70,7 @@
 
             },
             setHeight() {
-                let height = this.$refs.search.clientHeight;
+                let height = this.$refs.header.clientHeight;
                 this.scrollHeight = (window.screen.height - height) + 'px' ;
             },
             changeLetter(letter) {
