@@ -68,13 +68,13 @@
                 </div>
                 <div class="info-top-content">
                     <div class="info-top-content-items">
-                        <span class="info-top-content-items-text" :class="{'active-info':query.isbindcertificate == 2}" data-key="isbindcertificate" data-value="2" @click="chooseInfo('isbindcertificate',2)">不限</span>
+                        <span class="info-top-content-items-text" :class="{'active-info':query.isbindcertificate == 2}" @click="chooseInfo('isbindcertificate',2)">不限</span>
                     </div>
                     <div class="info-top-content-items">
-                        <span class="info-top-content-items-text" :class="{'active-info':query.isbindcertificate == 1}" data-key="isbindcertificate" data-value="1" @click="chooseInfo('isbindcertificate',1)">已绑定</span>
+                        <span class="info-top-content-items-text" :class="{'active-info':query.isbindcertificate == 1}" @click="chooseInfo('isbindcertificate',1)">已绑定</span>
                     </div>
                     <div class="info-top-content-items">
-                        <span class="info-top-content-items-text" :class="{'active-info':query.isbindcertificate == 0}" data-key="isbindcertificate" data-value="0" @click="chooseInfo('isbindcertificate',0)">未绑定</span>
+                        <span class="info-top-content-items-text" :class="{'active-info':query.isbindcertificate == 0}" @click="chooseInfo('isbindcertificate',0)">未绑定</span>
                     </div>
                 </div>
                 <div class="info-top-title">
@@ -82,13 +82,13 @@
                 </div>
                 <div class="info-top-content">
                     <div class="info-top-content-items">
-                        <span class="info-top-content-items-text" :class="{'active-info':query.isbindmobile == 2}" data-key="isbindmobile" data-value="2" @click="chooseInfo('isbindmobile',2)">不限</span>
+                        <span class="info-top-content-items-text" :class="{'active-info':query.isbindmobile == 2}" @click="chooseInfo('isbindmobile',2)">不限</span>
                     </div>
                     <div class="info-top-content-items">
-                        <span class="info-top-content-items-text" :class="{'active-info':query.isbindmobile == 1}" data-key="isbindmobile" data-value="1" @click="chooseInfo('isbindmobile',1)">已绑定</span>
+                        <span class="info-top-content-items-text" :class="{'active-info':query.isbindmobile == 1}" @click="chooseInfo('isbindmobile',1)">已绑定</span>
                     </div>
                     <div class="info-top-content-items">
-                        <span class="info-top-content-items-text" :class="{'active-info':query.isbindmobile == 0}" data-key="isbindmobile" data-value="0" @click="chooseInfo('isbindmobile',0)">未绑定</span>
+                        <span class="info-top-content-items-text" :class="{'active-info':query.isbindmobile == 0}" @click="chooseInfo('isbindmobile',0)">未绑定</span>
                     </div>
                 </div>
                 <div class="info-top-title">
@@ -96,13 +96,13 @@
                 </div>
                 <div class="info-top-content">
                     <div class="info-top-content-items">
-                        <span class="info-top-content-items-text" :class="{'active-info':query.isbindemail == 2}" data-key="isbindemail" data-value="2" @click="chooseInfo('isbindemail',2)">不限</span>
+                        <span class="info-top-content-items-text" :class="{'active-info':query.isbindemail == 2}" @click="chooseInfo('isbindemail',2)">不限</span>
                     </div>
                     <div class="info-top-content-items">
-                        <span class="info-top-content-items-text" :class="{'active-info':query.isbindemail == 1}" data-key="isbindemail" data-value="1" @click="chooseInfo('isbindemail',1)">已绑定</span>
+                        <span class="info-top-content-items-text" :class="{'active-info':query.isbindemail == 1}" @click="chooseInfo('isbindemail',1)">已绑定</span>
                     </div>
                     <div class="info-top-content-items">
-                        <span class="info-top-content-items-text" :class="{'active-info':query.isbindemail == 0}" data-key="isbindemail" data-value="0" @click="chooseInfo('isbindemail',0)">未绑定</span>
+                        <span class="info-top-content-items-text" :class="{'active-info':query.isbindemail == 0}" @click="chooseInfo('isbindemail',0)">未绑定</span>
                     </div>
                 </div>
                 <div class="info-top-title">
@@ -110,25 +110,25 @@
                 </div>
                 <div class="info-top-content">
                     <div class="info-top-content-items">
-                        <span class="info-top-content-items-text" :class="{'active-info':query.price == 0}" data-key="price" data-value="0" @click="chooseInfo('price',0)">不限</span>
+                        <span class="info-top-content-items-text" :class="{'active-info':query.price == 0}" @click="chooseInfo('price',0)">不限</span>
                     </div>
                     <div class="info-top-content-items">
-                        <span class="info-top-content-items-text" :class="{'active-info':query.price == 1}" data-key="price" data-value="1" @click="chooseInfo('price',1)">0-50</span>
+                        <span class="info-top-content-items-text" :class="{'active-info':query.price == 1}" @click="chooseInfo('price',1)">0-50</span>
                     </div>
                     <div class="info-top-content-items">
-                        <span class="info-top-content-items-text" :class="{'active-info':query.price == 2}" data-key="price" data-value="2" @click="chooseInfo('price',2)">50-100</span>
+                        <span class="info-top-content-items-text" :class="{'active-info':query.price == 2}" @click="chooseInfo('price',2)">50-100</span>
                     </div>
                     <div class="info-top-content-items">
-                        <span class="info-top-content-items-text" :class="{'active-info':query.price == 3}" data-key="price" data-value="3" @click="chooseInfo('price',3)">100-500</span>
+                        <span class="info-top-content-items-text" :class="{'active-info':query.price == 3}" @click="chooseInfo('price',3)">100-500</span>
                     </div>
                     <div class="info-top-content-items">
-                        <span class="info-top-content-items-text" :class="{'active-info':query.price == 4}" data-key="price" data-value="4" @click="chooseInfo('price',4)">500-1000</span>
+                        <span class="info-top-content-items-text" :class="{'active-info':query.price == 4}" @click="chooseInfo('price',4)">500-1000</span>
                     </div>
                     <div class="info-top-content-items">
-                        <span class="info-top-content-items-text" :class="{'active-info':query.price == 5}" data-key="price" data-value="5" @click="chooseInfo('price',5)">1000-2000</span>
+                        <span class="info-top-content-items-text" :class="{'active-info':query.price == 5}" @click="chooseInfo('price',5)">1000-2000</span>
                     </div>
                     <div class="info-top-content-items">
-                        <span class="info-top-content-items-text" :class="{'active-info':query.price == 6}" data-key="price" data-value="6" @click="chooseInfo('price',6)">2000以上</span>
+                        <span class="info-top-content-items-text" :class="{'active-info':query.price == 6}" @click="chooseInfo('price',6)">2000以上</span>
                     </div>
                 </div>
             </div>
@@ -341,13 +341,12 @@ export default {
     top:45px;
     width:100%;
     background:#fff;
-}
-
-.menu-item {
-	width:25%;
-	font-size: 14px;
-	color:#333;
-	text-align: center;
+    &-item {
+        width:25%;
+        font-size: 14px;
+        color:#333;
+        text-align: center;
+    }
 }
 
 /* 商品列表 */
@@ -361,117 +360,100 @@ export default {
     animation:slideDown 0.2s linear;
     display: flex;
     height:360px;
-}
+    &-left {
+        width:120px;
+        &-area {
+            display: block;
+            background:#f7f7f7;
+            text-indent: 18px;    
+            height:36px;
+            line-height: 36px;
+            border-bottom:1rpx solid #fff;
+            color:#666;
+            font-size: 13px;
+        }
+        .active-area {
+            background:#fff;
+        }
+    }
+    &-right {
+        flex:1;
+        padding:10px 12px 0;
+        color:#666;
+        &-search {
+            height:32px;
+            border:1px solid #f2f3f6;
+            line-height: 30px;
+            margin-bottom:10px;
+            border-radius:3px;
+            display: flex;
+            position: relative;
 
-.server-left {
-    width:120px;
-    
-}
-
-.server-left-area {
-    display: block;
-    background:#f7f7f7;
-    text-indent: 18px;    
-    height:36px;
-    line-height: 36px;
-    border-bottom:1rpx solid #fff;
-    color:#666;
-    font-size: 13px;
-}
-
-.active-area {
-    background:#fff;
-}
-
-.server-right {
-    flex:1;
-    padding:10px 12px 0;
-    color:#666;
-}
-
-.server-right-search {
-    height:32px;
-    border:1px solid #f2f3f6;
-    line-height: 30px;
-    margin-bottom:10px;
-    border-radius:3px;
-    display: flex;
-    position: relative;
-}
-
-.server-right-search-icon {
-    position: absolute;
-    top:10px;
-    left:6px;
-    width:10px;
-    height:10px;
-    vertical-align: middle;
-}
-
-.server-right-search-input {
-    flex:1;
-    font-size: 12px;
-    padding-left:23px;
-    vertical-align: middle;
-    height:100%;
-}
-
-.server-right-search-btn {
-    width:60px;
-    line-height: 30px;
-    text-align: center;
-    border-radius: 0 3px 3px 0;
-    background:#f7f7f7;
-    font-size: 12px;
-}
-
-.server-right-client {
-    height:310px;
-    position: relative;
-}
-
-.server-right-client-name {
-    height:36px;
-    line-height: 36px;
-    display: flex;
-}
-
-.server-right-client-name-text {
-    flex:1;
-    font-size: 13px;
-}
-
-.server-right-client-pic {
-    position: absolute;
-    top:40%;
-    left:50%;
-    transform:translate(-50%,-50%);
-    width:210px;
-    height:155px;
+            &-icon {
+                position: absolute;
+                top:10px;
+                left:6px;
+                width:10px;
+                height:10px;
+                vertical-align: middle;
+            }
+            &-input {
+                flex:1;
+                font-size: 12px;
+                padding-left:23px;
+                vertical-align: middle;
+                height:100%;
+            }
+            &-btn {
+                width:60px;
+                line-height: 30px;
+                text-align: center;
+                border-radius: 0 3px 3px 0;
+                background:#f7f7f7;
+                font-size: 12px;
+            }
+        }
+        &-client {
+            height:310px;
+            position: relative;
+            &-name {
+                height:36px;
+                line-height: 36px;
+                display: flex;
+                &-text {
+                    flex:1;
+                    font-size: 13px;
+                }
+            }
+            &-pic {
+                position: absolute;
+                top:40%;
+                left:50%;
+                transform:translate(-50%,-50%);
+                width:210px;
+                height:155px;
+            }
+        }
+    }
 }
 
 /* 排序下拉 */
 .sort {
     background:#fff;
     animation: slideDown 0.2s linear; 
+    &-item {
+        height:40px;
+        line-height: 40px;
+        padding-left: 30px;
+        &-name {
+            font-size: 14px;
+        }
+    }
+    .activeSort {
+        color:red;
+    }
 }
 
-
-.sort-item {
-    height:40px;
-    line-height: 40px;
-    padding-left: 30px;
-}
-
-.activeSort {
-    color:red;
-}
-
-.sort-item-name {
-    font-size: 14px;
-}
-
-/* 筛选框 */
 /* 筛选下拉 */
 .info {
     width:90%;
@@ -480,78 +462,64 @@ export default {
     animation:slideLeft 0.2s linear;
     position: absolute;
     top:0;
-    right:0;    
+    right:0;   
+    &-top {
+        color:#666;
+        padding:10px 20px;
+        font-size: 12px;
+        height:calc(100% - 70px);
+        &-tip {
+            margin-bottom:12px;
+        }
+        &-title {
+            font-size: 15px;
+            height:20px;
+            line-height: 20px;
+        }
+        &-content {
+            margin:12px 12px 0 0;
+            display: flex;
+            flex-wrap: wrap;
+            &-items {
+                width:33.33%;
+                text-align: center;
+                margin-bottom:12px;
+                display: flex;
+                &-text {
+                    width:80px;
+                    height:30px;
+                    line-height: 30px;
+                    border:1px solid #666;
+                    border-radius: 3px;
+                }
+            }
+        }
+    } 
+    &-bottom {
+        position: absolute;
+        bottom:0;
+        left:0;
+        width:100%;
+        height:45px;
+        line-height: 45px;
+        display: flex;
+        border-top:1rpx solid #f2f3f6;
+        &-button {
+            flex:1;
+            font-size: 14px;
+            text-align: center;
+            background: #F74B3D;
+            color:#fff;
+            &:nth-of-type(1) {
+                background:#fff;
+                color:#333;
+            }
+        }
+    }   
+    .active-info {
+        border-color:#F74B3D;
+        color:#F74B3D;
+    }
 }
 
-.info-top {
-    color:#666;
-    padding:10px 20px;
-    font-size: 12px;
-    height:calc(100% - 70px);
-}
-
-.info-top-tip {
-    margin-bottom:12px;
-}
-
-.info-top-title {
-    font-size: 15px;
-    height:20px;
-    line-height: 20px;
-}   
-
-.info-top-content {
-    margin:12px 12px 0 0;
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.info-top-content-items {
-    width:33.33%;
-    text-align: center;
-    margin-bottom:12px;
-    display: flex;
-}
-
-.info-top-content-items-text {
-    width:80px;
-    height:30px;
-    line-height: 30px;
-    border:1px solid #666;
-    border-radius: 3px;
-}
-
-.active-info {
-    border-color:#F74B3D;
-    color:#F74B3D;
-}
-
-.info-bottom {
-    position: absolute;
-    bottom:0;
-    left:0;
-    width:100%;
-    height:45px;
-    line-height: 45px;
-    display: flex;
-    border-top:1rpx solid #f2f3f6;
-}
-
-.info-bottom-button {
-    flex:1;
-    font-size: 14px;
-    text-align: center;
-}
-
-.info-bottom-button:nth-of-type(1) {
-    background:#fff;
-    color:#333;
-    
-}
-
-.info-bottom-button:nth-of-type(2) {
-    background: #F74B3D;
-    color:#fff;
-
-}
 </style>
