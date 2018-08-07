@@ -90,7 +90,7 @@
 <style scoped lang='less'>
     
 .container {
-    background:#f2f3f6;
+    
 }
 
 /* tab栏 */

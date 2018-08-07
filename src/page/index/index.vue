@@ -67,6 +67,10 @@
 
 <style scoped lang='less'>
 
+.container {
+    padding-top: 0;
+}
+
 .swiper {
     height:125px;
     line-height: 125px;

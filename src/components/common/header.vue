@@ -11,7 +11,7 @@
 
             </div>
         </div>
-        <div style="height:45px;"></div>
+        
     </div>
 </template>
 

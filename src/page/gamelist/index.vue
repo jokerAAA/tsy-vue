@@ -95,7 +95,7 @@
 // @import '../../common/var.less' ;
 @red:#ff3434;
 .container {
-    background:#f5f5f5;
+    padding-top: 45px;
     font-size: 14px;
 }
 
