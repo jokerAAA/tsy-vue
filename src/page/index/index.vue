@@ -6,34 +6,37 @@
         </div>
         <!-- tab -->
         <div class="tab">
-            <div class="tab-items">
-                <span class="tab-items-text">性价比推荐</span>
+            <div class="tab-items" @click="changeTab(0)">
+                <span class="tab-items-text" :class="{'active-tab':activeTab == 0}">性价比推荐</span>
             </div>
-            <div class="tab-items">
-                <span class="tab-items-text">热门游戏</span>
+            <div class="tab-items" @click="changeTab(1)">
+                <span class="tab-items-text" :class="{'active-tab':activeTab == 1}">热门游戏</span>
             </div>
         </div>
         <!-- 性价比推荐 -->
-
+        <HotGoods :list="hotGoods" v-show="activeTab == 0"></HotGoods>
         <!-- 热门游戏 -->
-        <HotGame :list="hotGame"></HotGame>
+        <HotGame :list="hotGame" v-show="activeTab == 1"></HotGame>
     </div>
 </template>
 
 <script>
     import HotGame from './children/hotgame';
+    import HotGoods from './children/hotgoods';
     import axios from 'axios';
     export default {
         data:function() {
             return {
                 swiper:[],
                 hotGame:[],
-                hotGoods:[]
+                hotGoods:[],
+                activeTab:1
             }
         },
 
         components:{
-            HotGame
+            HotGame,
+            HotGoods
         },
 
 
@@ -51,11 +54,14 @@
                     this.hotGame = data.hotGameList;
                     this.hotGoods = data.highQualityTradeList;
                 })
+            },
+
+            changeTab(index) {
+                this.activeTab = index ;
             }
+        },
 
-            
-
-        }
+        
     }
 </script>
 
@@ -82,5 +88,10 @@
             font-size: 16px;
         }
     }
+}
+
+.active-tab {
+    color:#FF4800;
+    border-bottom:1px solid #FF4800;
 }
 </style>
