@@ -25,6 +25,8 @@
 <script>
     import Header from '@/components/common/header';
     import axios from '@/utils/axios';
+    import {cache} from '@/utils/util';
+    console.log(cache);
     export default {
         data:function() {
             return {
@@ -56,11 +58,18 @@
             },
             getGamelist(letter) {
                 const that = this ;
-                axios.get(`api/games/list/index?letter=${letter}`)
-                .then((res)=> {
-                    const data = res.data.data;
-                    this.renderData(data);
-                })
+                const cacheData = cache.get(letter);
+                if(!cacheData) {
+                    axios.get(`api/games/list/index?letter=${letter}`)
+                    .then((res)=> {
+                        const data = res.data.data;
+                        that.renderData(data);
+                        cache.set(letter,data);
+                    })
+                }else {
+                    that.renderData(cacheData);
+                }
+                
             },
             renderData(data) {
                 let letterArr = data.firstLetterList ;
