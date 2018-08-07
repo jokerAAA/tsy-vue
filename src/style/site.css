@@ -1,3 +1,9 @@
+
+.container {
+  background:#f5f5f5;
+  min-height: 100vh;
+}
+
 .mask {
     background:rgba(0,0,0,.5);
     position: fixed;
@@ -10,4 +16,34 @@
 
 .red {
   color:#ff3434;
+}
+
+.clearfix::before,.clearfix::after {
+  content:"";
+  height:0;
+  line-height: 0;
+  display: block;
+  clear:both;
+}
+
+.fl {
+  float:left;
+}
+
+.fr {
+  float:right;
+}
+
+.show {
+  display: block;
+}
+
+.block {
+  display: none;
+}
+
+.ellipise {
+  text-overflow: ellipsis;
+  overflow:hidden;
+  white-space: nowrap;
 }
