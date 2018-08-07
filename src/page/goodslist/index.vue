@@ -68,13 +68,13 @@
                 </div>
                 <div class="info-top-content">
                     <div class="info-top-content-items">
-                        <span class="info-top-content-items-text" :class="{'active-info':query.isbindcertificate == 2}" data-key="isbindcertificate" data-value="2" bindtap="chooseInfo">不限</span>
+                        <span class="info-top-content-items-text" :class="{'active-info':query.isbindcertificate == 2}" data-key="isbindcertificate" data-value="2" @click="chooseInfo('isbindcertificate',2)">不限</span>
                     </div>
                     <div class="info-top-content-items">
-                        <span class="info-top-content-items-text" :class="{'active-info':query.isbindcertificate == 1}" data-key="isbindcertificate" data-value="1" bindtap="chooseInfo">已绑定</span>
+                        <span class="info-top-content-items-text" :class="{'active-info':query.isbindcertificate == 1}" data-key="isbindcertificate" data-value="1" @click="chooseInfo('isbindcertificate',1)">已绑定</span>
                     </div>
                     <div class="info-top-content-items">
-                        <span class="info-top-content-items-text" :class="{'active-info':query.isbindcertificate == 0}" data-key="isbindcertificate" data-value="0" bindtap="chooseInfo">未绑定</span>
+                        <span class="info-top-content-items-text" :class="{'active-info':query.isbindcertificate == 0}" data-key="isbindcertificate" data-value="0" @click="chooseInfo('isbindcertificate',0)">未绑定</span>
                     </div>
                 </div>
                 <div class="info-top-title">
@@ -82,13 +82,13 @@
                 </div>
                 <div class="info-top-content">
                     <div class="info-top-content-items">
-                        <span class="info-top-content-items-text" :class="{'active-info':query.isbindmobile == 2}" data-key="isbindmobile" data-value="2" bindtap="chooseInfo">不限</span>
+                        <span class="info-top-content-items-text" :class="{'active-info':query.isbindmobile == 2}" data-key="isbindmobile" data-value="2" @click="chooseInfo('isbindmobile',2)">不限</span>
                     </div>
                     <div class="info-top-content-items">
-                        <span class="info-top-content-items-text" :class="{'active-info':query.isbindmobile == 1}" data-key="isbindmobile" data-value="1" bindtap="chooseInfo">已绑定</span>
+                        <span class="info-top-content-items-text" :class="{'active-info':query.isbindmobile == 1}" data-key="isbindmobile" data-value="1" @click="chooseInfo('isbindmobile',1)">已绑定</span>
                     </div>
                     <div class="info-top-content-items">
-                        <span class="info-top-content-items-text" :class="{'active-info':query.isbindmobile == 0}" data-key="isbindmobile" data-value="0" bindtap="chooseInfo">未绑定</span>
+                        <span class="info-top-content-items-text" :class="{'active-info':query.isbindmobile == 0}" data-key="isbindmobile" data-value="0" @click="chooseInfo('isbindmobile',0)">未绑定</span>
                     </div>
                 </div>
                 <div class="info-top-title">
@@ -96,13 +96,13 @@
                 </div>
                 <div class="info-top-content">
                     <div class="info-top-content-items">
-                        <span class="info-top-content-items-text" :class="{'active-info':query.isbindemail == 2}" data-key="isbindemail" data-value="2" bindtap="chooseInfo">不限</span>
+                        <span class="info-top-content-items-text" :class="{'active-info':query.isbindemail == 2}" data-key="isbindemail" data-value="2" @click="chooseInfo('isbindemail',2)">不限</span>
                     </div>
                     <div class="info-top-content-items">
-                        <span class="info-top-content-items-text" :class="{'active-info':query.isbindemail == 1}" data-key="isbindemail" data-value="1" bindtap="chooseInfo">已绑定</span>
+                        <span class="info-top-content-items-text" :class="{'active-info':query.isbindemail == 1}" data-key="isbindemail" data-value="1" @click="chooseInfo('isbindemail',1)">已绑定</span>
                     </div>
                     <div class="info-top-content-items">
-                        <span class="info-top-content-items-text" :class="{'active-info':query.isbindemail == 0}" data-key="isbindemail" data-value="0" bindtap="chooseInfo">未绑定</span>
+                        <span class="info-top-content-items-text" :class="{'active-info':query.isbindemail == 0}" data-key="isbindemail" data-value="0" @click="chooseInfo('isbindemail',0)">未绑定</span>
                     </div>
                 </div>
                 <div class="info-top-title">
@@ -110,33 +110,33 @@
                 </div>
                 <div class="info-top-content">
                     <div class="info-top-content-items">
-                        <span class="info-top-content-items-text" :class="{'active-info':query.price == 0}" data-key="price" data-value="0" bindtap="chooseInfo">不限</span>
+                        <span class="info-top-content-items-text" :class="{'active-info':query.price == 0}" data-key="price" data-value="0" @click="chooseInfo('price',0)">不限</span>
                     </div>
                     <div class="info-top-content-items">
-                        <span class="info-top-content-items-text" :class="{'active-info':query.price == 1}" data-key="price" data-value="1" bindtap="chooseInfo">0-50</span>
+                        <span class="info-top-content-items-text" :class="{'active-info':query.price == 1}" data-key="price" data-value="1" @click="chooseInfo('price',1)">0-50</span>
                     </div>
                     <div class="info-top-content-items">
-                        <span class="info-top-content-items-text" :class="{'active-info':query.price == 2}" data-key="price" data-value="2" bindtap="chooseInfo">50-100</span>
+                        <span class="info-top-content-items-text" :class="{'active-info':query.price == 2}" data-key="price" data-value="2" @click="chooseInfo('price',2)">50-100</span>
                     </div>
                     <div class="info-top-content-items">
-                        <span class="info-top-content-items-text" :class="{'active-info':query.price == 3}" data-key="price" data-value="3" bindtap="chooseInfo">100-500</span>
+                        <span class="info-top-content-items-text" :class="{'active-info':query.price == 3}" data-key="price" data-value="3" @click="chooseInfo('price',3)">100-500</span>
                     </div>
                     <div class="info-top-content-items">
-                        <span class="info-top-content-items-text" :class="{'active-info':query.price == 4}" data-key="price" data-value="4" bindtap="chooseInfo">500-1000</span>
+                        <span class="info-top-content-items-text" :class="{'active-info':query.price == 4}" data-key="price" data-value="4" @click="chooseInfo('price',4)">500-1000</span>
                     </div>
                     <div class="info-top-content-items">
-                        <span class="info-top-content-items-text" :class="{'active-info':query.price == 5}" data-key="price" data-value="5" bindtap="chooseInfo">1000-2000</span>
+                        <span class="info-top-content-items-text" :class="{'active-info':query.price == 5}" data-key="price" data-value="5" @click="chooseInfo('price',5)">1000-2000</span>
                     </div>
                     <div class="info-top-content-items">
-                        <span class="info-top-content-items-text" :class="{'active-info':query.price == 6}" data-key="price" data-value="6" bindtap="chooseInfo">2000以上</span>
+                        <span class="info-top-content-items-text" :class="{'active-info':query.price == 6}" data-key="price" data-value="6" @click="chooseInfo('price',6)">2000以上</span>
                     </div>
                 </div>
             </div>
             <div class="info-bottom">
-                <div class="info-bottom-button" bindtap="resetInfo" id="reset">
+                <div class="info-bottom-button" @click="resetInfo" id="reset">
                     重置选项
                 </div>
-                <div class="info-bottom-button" bindtap="confirmInfo">
+                <div class="info-bottom-button" @click="confirmInfo">
                     确定
                 </div>
             </div>
@@ -161,8 +161,8 @@ export default {
 		goodsid: 1 ,
         page : 1 ,
         sort: 0 ,
-        clientid:'',
-        areaid:'',
+        clientid:'0',
+        areaid:'0',
         isbindmobile:2,
         isbindcertificate:2,
         isbindemail:2,
@@ -287,12 +287,33 @@ export default {
         this.showType = '';
     },
 
-    showMask(type) {
-        this.showType = type ;
+    showMask(key) {
+        if (key == this.showType) {
+			this.showType = '';
+		} else {
+			this.showType = key ;
+		}
     },
 
     stopPropagation(e) {
         e.stopPropagation();
+    },
+
+    /*选择筛选项  */
+    chooseInfo(key,value) {
+        this.query[key] = value ;
+    },
+    /* 重置 */
+    resetInfo() {
+        this.query.isbindmobile = 2;
+        this.query.isbindcertificate = 2;
+        this.query.isbindemail = 2 ;
+        this.query.price = 0;
+    },
+
+    /* 确认筛选项 */
+    confirmInfo() {
+        this.getGoodslist();
     }
   }
 };
