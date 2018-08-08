@@ -36,7 +36,7 @@
                 <img class="btn-left-img" src="@/image/kefu.png">
                 <div class="btn-left-text">客服</div>
             </div>
-            <div class="btn-buy" bindtap="buyGoods">
+            <div class="btn-buy" @click="buyGoods">
                 立即购买
             </div>
         </div>
@@ -108,6 +108,11 @@
 
             changeTab(index) {
                 this.activeTab = index ;
+            },
+
+            /* 立即购买 */
+            buyGoods() {
+                
             }
         }
     }
