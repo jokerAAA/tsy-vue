@@ -51,14 +51,6 @@
 					￥{{price}}
 				</div>
 			</div>
-			<div class="price-item">
-				<div class="left">
-					客服服务费
-				</div>
-				<div class="right red">
-					￥{{serviceMoney}}
-				</div>
-			</div>
 		</div>
 
 		<div class="tips">
@@ -68,7 +60,7 @@
 		<div class="btn">
 			<div class="btn-price">
 				实付款:
-				<span class="red">￥{{price + insuranceMoney + serviceMoney}}</span>
+				<span class="red">￥{{price + insuranceMoney}}</span>
 			</div>
 			<div class="btn-submit" bindtap="submitOrder">
 				提交订单
@@ -134,6 +126,12 @@ export default {
 </script>
 
 <style scoped lang="less">
+
+.container {
+	padding-top: 0;
+	text-align: left;
+}
+
 .left {
     width:100px;
     color:#333;
