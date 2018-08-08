@@ -18,6 +18,15 @@
         <Info :game="game" :trade="trade" :goodsname="goodsname" :extensionAttr="extensionAttr" :isShow=" activeTab == 0 "></Info>
         <!-- 购买流程 -->
         <Process :isShow=" activeTab ==  1 "></Process>
+        <!-- 推荐商品 -->
+        <Rec :hotTrades="hotTrades" v-if="hotTrades.length > 0"></Rec>
+
+        <!-- 底部提示 -->
+        <div class="bottom">
+            <div class="bottom-tips">
+                已经到底了
+            </div>
+        </div>
     </div>
 </template>
 
@@ -27,6 +36,7 @@
     import Swiper from '@/components/ui/swiper';
     import Process from './children/process';
     import Info from './children/info';
+    import Rec from './children/rec'
     import axios from '@/utils/axios';
 
     export default {
@@ -37,8 +47,9 @@
                 game:{}, //商品相关
                 extensionAttr:[], //配置属性
                 piclist:[], //轮播图
-                activeTab:0,//操作系统
-                system:''
+                activeTab:0,
+                system:'', //操作系统
+                hotTrades:[], //推荐商品
             }
         },
 
@@ -47,7 +58,8 @@
             Goodstitle,
             Swiper,
             Process,
-            Info
+            Info,
+            Rec
         },
 
         created() {
@@ -76,7 +88,8 @@
                     that.piclist = data.piclist;
                     that.extensionAttr = data.extensionAttr;
                     that.gamename = data.gamename;
-                    data.system = data.mobilesystem;
+                    that.system = data.mobilesystem;
+                    that.hotTrades = data.hotTrades; 
                 })
             },
 
@@ -88,10 +101,6 @@
 </script>
 
 <style scoped lang='less'>
-    
-.container {
-    
-}
 
 /* tab栏 */
 .tab {
@@ -125,5 +134,38 @@
 .active-tab {
     color: #ff3434;
     border-bottom: 1px solid #ff3434;
+}
+
+/* 底部提示 */
+.bottom {
+    height: 44px;
+    padding-top: 15px;
+}
+
+.bottom-tips {
+    width: 130px;
+    margin: 0 auto;
+    height: 14px;
+    color: #999;
+    position: relative;
+    font-size: 12px;
+    text-align: center;
+}
+
+.bottom-tips::before, .bottom-tips::after {
+    content: "";
+    width: 30px;
+    height: 2px;
+    position: absolute;
+    top: 6px;
+    background: #999;
+}
+
+.bottom-tips::before {
+    left: 0;
+}
+
+.bottom-tips::after {
+    right: 0;
 }
 </style>
