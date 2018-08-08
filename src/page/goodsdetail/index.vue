@@ -82,7 +82,6 @@
         methods:{
             init() {
                 const id = this.$route.query.id;
-                console.log(id);
                 this.getData(id);
             },
 
@@ -95,7 +94,6 @@
                 })
                 .then(function(res) {
                     let data = res.data.data;
-                    console.log(data);
                     that.trade = data.trade;
                     that.game = data.game;
                     that.piclist = data.piclist;
@@ -112,7 +110,15 @@
 
             /* 立即购买 */
             buyGoods() {
-                
+                const that = this ;
+                axios.get('/api/user/buy/trade',{
+                    params:{
+                        tradeid:that.$route.query.id
+                    }
+                })
+                .then((res)=> {
+
+                })
             }
         }
     }

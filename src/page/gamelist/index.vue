@@ -26,7 +26,6 @@
     import Header from '@/components/common/header';
     import axios from '@/utils/axios';
     import {cache} from '@/utils/util';
-    console.log(cache);
     export default {
         data:function() {
             return {

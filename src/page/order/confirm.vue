@@ -31,13 +31,13 @@
 				<div class="left">
 					联系手机
 				</div>
-				<input class="right info-item-input" type="number" maxlength="11" placeholder='请输入' bindinput="handleInput" data-name="buyermobile" value="{{formData.buyermobile}}" />
+				<input class="right info-item-input" type="number" maxlength="11" placeholder='请输入' bindinput="handleInput" data-name="buyermobile" :value="formData.buyermobile" />
 			</div>
 			<div class="info-item">
 				<div class="left">
 					联系QQ
 				</div>
-				<input class="right info-item-input" type="number" maxlength="10" placeholder='请输入' bindinput="handleInput" data-name="buyerqq" value="{{formData.buyerqq}}" />
+				<input class="right info-item-input" type="number" maxlength="10" placeholder='请输入' bindinput="handleInput" data-name="buyerqq" :value="formData.buyerqq" />
 			</div>
 		</div>
 
@@ -159,7 +159,7 @@ export default {
     height:14px;
     top:19px;
     right:0;
-    background:url('@/image/arrow-right') no-repeat;
+    // background:url('../') no-repeat;
     background-size: contain;
 }
 

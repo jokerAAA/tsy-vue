@@ -49,7 +49,6 @@
                 axios.get('/api/indexpage/index/index')
                 .then((res) => {
                     const data = res.data.data;
-                    console.log(data);
                     this.swiper = data.bannerList;
                     this.hotGame = data.hotGameList;
                     this.hotGoods = data.highQualityTradeList;
