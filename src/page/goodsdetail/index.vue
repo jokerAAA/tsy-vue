@@ -140,32 +140,30 @@
 .bottom {
     height: 44px;
     padding-top: 15px;
-}
 
-.bottom-tips {
-    width: 130px;
-    margin: 0 auto;
-    height: 14px;
-    color: #999;
-    position: relative;
-    font-size: 12px;
-    text-align: center;
-}
+    &-tips {
+        width: 130px;
+        margin: 0 auto;
+        height: 14px;
+        color: #999;
+        position: relative;
+        font-size: 12px;
+        text-align: center;
 
-.bottom-tips::before, .bottom-tips::after {
-    content: "";
-    width: 30px;
-    height: 2px;
-    position: absolute;
-    top: 6px;
-    background: #999;
-}
-
-.bottom-tips::before {
-    left: 0;
-}
-
-.bottom-tips::after {
-    right: 0;
+        &::before,&::after {
+            content: "";
+            width: 30px;
+            height: 2px;
+            position: absolute;
+            top: 6px;
+            background: #999;
+        }
+        &::before {
+            left: 0;
+        }
+        &::after {
+            right: 0;
+        }
+    }
 }
 </style>

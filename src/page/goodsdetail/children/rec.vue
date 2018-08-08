@@ -39,41 +39,39 @@
 
 .rec {
     background: #fff;
-    margin-top: 20rpx;
+    margin-top: 10px;
     color: #333;
     font-size: 14px;
-}
 
-.rec-title {
-    height: 72rpx;
-    line-height: 72rpx;
-    padding-left: 24rpx;
-    font-size: 16px;
-}
+    &-title {
+        height: 36px;
+        line-height: 36px;
+        padding-left: 12px;
+        font-size: 16px;
+    }   
+    &-list {
 
-.rec-list {
-}
+        &-item {
+            padding: 11px 12px;
+            border-bottom: 1px solid #f2f3f6;
+            display: flex;
+            height:45px;
+            &:nth-last-of-type(1) {
+                border: none;
+            }
+            &-title {
+                flex: 1;
+                margin-right: 6px;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                word-break: break-all;
+                white-space: nowrap;
+            }
+            &-price {
+                width: 80px;
+            }
+        }
 
-.rec-list-item {
-    padding: 22rpx 24rpx;
-    border-bottom: 1rpx solid #f2f3f6;
-    display: flex;
-    height:90rpx;
-}
-
-.rec-lsit-item:nth-last-of-type(1) {
-    border: none;
-}
-
-.rec-list-item-title {
-    flex: 1;
-    margin-right: 12rpx;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    word-break: break-all;
-}
-
-.rec-list-item-price {
-    width: 160rpx;
+    }
 }
 </style>
