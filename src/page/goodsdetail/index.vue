@@ -20,11 +20,24 @@
         <Process :isShow=" activeTab ==  1 "></Process>
         <!-- 推荐商品 -->
         <Rec :hotTrades="hotTrades" v-if="hotTrades.length > 0"></Rec>
-
         <!-- 底部提示 -->
         <div class="bottom">
             <div class="bottom-tips">
                 已经到底了
+            </div>
+        </div>
+        <!-- 底部按钮 -->
+        <div class="btn">
+            <div class="btn-left share">
+                <img class="btn-left-img" src="@/image/share.png" >
+                <div class="btn-left-text">分享</div>
+            </div>
+            <div class="btn-left contact">
+                <img class="btn-left-img" src="@/image/kefu.png">
+                <div class="btn-left-text">客服</div>
+            </div>
+            <div class="btn-buy" bindtap="buyGoods">
+                立即购买
             </div>
         </div>
     </div>
@@ -101,7 +114,9 @@
 </script>
 
 <style scoped lang='less'>
-
+.container {
+    padding-bottom: 50px;
+}
 /* tab栏 */
 .tab {
     display: flex;
@@ -164,6 +179,51 @@
         &::after {
             right: 0;
         }
+    }
+}
+
+/* 底部按钮 */
+
+.btn {
+    height: 50px;
+    background: #fff;
+    display: flex;
+    position: fixed;
+    bottom:0;
+    left:0;
+    width:100%;
+    &-left {
+        font-size: 10px;
+        color: #999;
+        width: 75px;
+        padding-top:12px;
+        text-align: center;
+
+        &-img {
+            width: 14px;
+            height: 14px;
+            margin:0 auto 3px;
+            display: block;
+        }
+        &-text {
+            line-height: 14px;
+        }
+    }
+    .share,.contact {
+        background-color: #fff;
+        border-radius: 0;
+    }
+
+    .share::before, .share::after,.contact::before,.contact::after {
+        border: none;
+    }
+    &-buy {
+        flex: 1;
+        background: #ff3434;
+        font-size: 16px;
+        text-align: center;
+        line-height: 50px;
+        color: #fff;
     }
 }
 </style>
