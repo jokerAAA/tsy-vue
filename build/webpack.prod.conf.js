@@ -17,13 +17,16 @@ const webpackConfig = merge(baseWebpackConfig, {
   module: {
     rules: utils.styleLoaders({
       sourceMap: config.build.productionSourceMap,
+      /* 分离css文件 */
       extract: true,
       usePostCSS: true
     })
   },
+  /* sourcemap的配置 */
   devtool: config.build.productionSourceMap ? config.build.devtool : false,
   output: {
     path: config.build.assetsRoot,
+    /* 使用chunkhash，内容不变时hash不变，利用缓存 */
     filename: utils.assetsPath('js/[name].[chunkhash].js'),
     chunkFilename: utils.assetsPath('js/[id].[chunkhash].js')
   },
@@ -32,6 +35,7 @@ const webpackConfig = merge(baseWebpackConfig, {
     new webpack.DefinePlugin({
       'process.env': env
     }),
+    /* 压缩混淆js */
     new UglifyJsPlugin({
       uglifyOptions: {
         compress: {
@@ -42,12 +46,14 @@ const webpackConfig = merge(baseWebpackConfig, {
       parallel: true
     }),
     // extract css into its own file
+    /* 分离css文件，不配置时css文件将内联 */
     new ExtractTextPlugin({
       filename: utils.assetsPath('css/[name].[contenthash].css'),
       // Setting the following option to `false` will not extract CSS from codesplit chunks.
       // Their CSS will instead be inserted dynamically with style-loader when the codesplit chunk has been loaded by webpack.
       // It's currently set to `true` because we are seeing that sourcemaps are included in the codesplit bundle as well when it's `false`, 
       // increasing file size: https://github.com/vuejs-templates/webpack/issues/1110
+      /* 是否打包？ */
       allChunks: true,
     }),
     // Compress extracted CSS. We are using this plugin so that possible
@@ -60,6 +66,7 @@ const webpackConfig = merge(baseWebpackConfig, {
     // generate dist index.html with correct asset hash for caching.
     // you can customize output by editing /index.html
     // see https://github.com/ampedandwired/html-webpack-plugin
+    /* 添加模板，移除空白注释等内容 */
     new HtmlWebpackPlugin({
       filename: config.build.index,
       template: 'index.html',
@@ -75,10 +82,17 @@ const webpackConfig = merge(baseWebpackConfig, {
       chunksSortMode: 'dependency'
     }),
     // keep module.id stable when vendor modules does not change
+    /* 根据模块相对路径生成四位数hash作为id，模块id不易变化 */
     new webpack.HashedModuleIdsPlugin(),
     // enable scope hoisting
+    /* ??? */
     new webpack.optimize.ModuleConcatenationPlugin(),
     // split vendor js into its own file
+    /**
+     * 将mode_module下的文件提取为vendor文件
+     * 更多配置见https://www.webpackjs.com/plugins/commons-chunk-plugin/ 
+     * 当前项目vendor中应该加入axios、ui库、统计代码等
+     * */
     new webpack.optimize.CommonsChunkPlugin({
       name: 'vendor',
       minChunks (module) {
@@ -94,6 +108,10 @@ const webpackConfig = merge(baseWebpackConfig, {
     }),
     // extract webpack runtime and module manifest to its own file in order to
     // prevent vendor hash from being updated whenever app bundle is updated
+    /** 
+     * 
+     * manifest是webpack解析模块的依据，将manifest文件单独hash,
+     * */
     new webpack.optimize.CommonsChunkPlugin({
       name: 'manifest',
       minChunks: Infinity
@@ -118,7 +136,7 @@ const webpackConfig = merge(baseWebpackConfig, {
     ])
   ]
 })
-
+/* gzip配置，生产环境一般由服务器压缩 */
 if (config.build.productionGzip) {
   const CompressionWebpackPlugin = require('compression-webpack-plugin')
 
@@ -136,7 +154,7 @@ if (config.build.productionGzip) {
     })
   )
 }
-
+/* ??? */
 if (config.build.bundleAnalyzerReport) {
   const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
   webpackConfig.plugins.push(new BundleAnalyzerPlugin())

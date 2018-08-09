@@ -23,7 +23,9 @@ module.exports = {
       : config.dev.assetsPublicPath
   },
   resolve: {
+    /* 指定解析顺序，依次为js、vue和json文件 */
     extensions: ['.js', '.vue', '.json'],
+    /* 指定解析时的别名，即解析时遇到@自动改变@的引用位置为../src */
     alias: {
       'vue$': 'vue/dist/vue.esm.js',
       '@': resolve('src'),

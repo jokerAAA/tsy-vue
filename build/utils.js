@@ -5,9 +5,9 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const packageConfig = require('../package.json')
 
 exports.assetsPath = function (_path) {
-  const assetsSubDirectory = process.env.NODE_ENV === 'production'
-    ? config.build.assetsSubDirectory
-    : config.dev.assetsSubDirectory
+  const assetsSubDirectory = process.env.NODE_ENV === 'production' ?
+    config.build.assetsSubDirectory :
+    config.dev.assetsSubDirectory
 
   return path.posix.join(assetsSubDirectory, _path)
 }
@@ -30,7 +30,7 @@ exports.cssLoaders = function (options) {
   }
 
   // generate loader string to be used with extract text plugin
-  function generateLoaders (loader, loaderOptions) {
+  function generateLoaders(loader, loaderOptions) {
     const loaders = options.usePostCSS ? [cssLoader, postcssLoader] : [cssLoader]
 
     if (loader) {
@@ -59,7 +59,28 @@ exports.cssLoaders = function (options) {
     css: generateLoaders(),
     postcss: generateLoaders(),
     less: generateLoaders('less'),
-    sass: generateLoaders('sass', { indentedSyntax: true }),
+    /* 
+      返回值示例
+    {
+    less: ['vue-style-loader',
+      {
+        loader: 'css-loader',
+        options: [Object]
+      },
+      {
+        loader: 'postcss-loader',
+        options: [Object]
+      },
+      {
+        loader: 'less-loader',
+        options: [Object]
+      }
+    ]
+  }
+    */
+    sass: generateLoaders('sass', {
+      indentedSyntax: true
+    }),
     scss: generateLoaders('sass'),
     stylus: generateLoaders('stylus'),
     styl: generateLoaders('stylus')
@@ -78,6 +99,22 @@ exports.styleLoaders = function (options) {
       use: loader
     })
   }
+  /* 上面函数生成的loader转化为webpack的配置项
+  [ { test: /\.css$/,
+    use: [ 'vue-style-loader', [Object], [Object] ] },
+  { test: /\.postcss$/,
+    use: [ 'vue-style-loader', [Object], [Object] ] },
+  { test: /\.less$/,
+    use: [ 'vue-style-loader', [Object], [Object], [Object] ] },
+  { test: /\.sass$/,
+    use: [ 'vue-style-loader', [Object], [Object], [Object] ] },
+  { test: /\.scss$/,
+    use: [ 'vue-style-loader', [Object], [Object], [Object] ] },
+  { test: /\.stylus$/,
+    use: [ 'vue-style-loader', [Object], [Object], [Object] ] },
+  { test: /\.styl$/,
+    use: [ 'vue-style-loader', [Object], [Object], [Object] ] } ]
+  */
 
   return output
 }

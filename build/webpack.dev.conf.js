@@ -15,12 +15,14 @@ const PORT = process.env.PORT && Number(process.env.PORT)
 
 const devWebpackConfig = merge(baseWebpackConfig, {
   module: {
+    /* 传如sourcemap和postcss配置项，在cssLoaders中使用 */
     rules: utils.styleLoaders({ sourceMap: config.dev.cssSourceMap, usePostCSS: true })
   },
   // cheap-module-eval-source-map is faster for development
   devtool: config.dev.devtool,
 
   // these devServer options should be customized in /config/index.js
+  //具体见文档 https://www.webpackjs.com/configuration/dev-server/
   devServer: {
     clientLogLevel: 'warning',
     historyApiFallback: {
@@ -48,16 +50,22 @@ const devWebpackConfig = merge(baseWebpackConfig, {
     new webpack.DefinePlugin({
       'process.env': require('../config/dev.env')
     }),
+    /* 模块热替换 */
     new webpack.HotModuleReplacementPlugin(),
+    /* 显示模块相对路径 */
     new webpack.NamedModulesPlugin(), // HMR shows correct file names in console on update.
+    /* webpack进程遇到错误不会退出 */
     new webpack.NoEmitOnErrorsPlugin(),
     // https://github.com/ampedandwired/html-webpack-plugin
+    /* 模板注入 */
     new HtmlWebpackPlugin({
       filename: 'index.html',
       template: 'index.html',
       inject: true
     }),
+
     // copy custom static assets
+    /* 拷贝静态资源，设置为static文件夹下，项目中暂未使用 */
     new CopyWebpackPlugin([
       {
         from: path.resolve(__dirname, '../static'),
