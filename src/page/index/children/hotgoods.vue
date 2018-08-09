@@ -1,7 +1,7 @@
 <template>
     <div>
         <div class="rec">
-            <h1>this is rec!</h1>
+            <p>这是推荐商品，暂时缺少设计图</p>
         </div>
     </div>    
 
@@ -22,5 +22,7 @@
 </script>
 
 <style lang='less' scoped>
-
+.rec {
+    padding-top:10px;
+}
 </style>

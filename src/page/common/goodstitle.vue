@@ -102,6 +102,7 @@
 		&-right {
 			width: 70px;
 			font-size: 10px;
+			color:#999;
 		}
 	}
 	&-area {
@@ -111,7 +112,7 @@
 
 		&-span {
 		line-height: 10px;
-
+		color:#999; 	
 			&:nth-of-type(1) {
 				padding-right: 10px;
 				margin-right: 10px;
