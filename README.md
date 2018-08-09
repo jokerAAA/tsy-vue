@@ -23,7 +23,7 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
 ## 项目介绍
 
     tsy-vue是vue版本tsy的实现，api是基于测试环境下tsy小程序来实现
-    主要技术：vue + vue-router + axios + less + mint-ui，部分页面css沿用小程序样式，未使用less
+    主要技术：vue + vue-router + axios + less + mint-ui
 
 ## 项目进度
 

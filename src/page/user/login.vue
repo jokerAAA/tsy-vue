@@ -111,58 +111,55 @@ export default {
 }
 
 .logo {
-  height: 120px;
-  text-align: center;
-  padding-top: 26px;
-}
-
-.logo-img {
-  width: 60px;
-  height: 68px;
+	height: 120px;
+	text-align: center;
+	padding-top: 26px;
+	&-img {
+			width: 60px;
+			height: 68px;
+	}
 }
 
 .info {
-  padding: 0 30px;
-}
+	padding: 0 30px;
+	
+	&-item {
+		border-bottom: 2px solid #f2f2f2;
+		position: relative;
+		height: 50px;
+		padding-top: 15px;
 
-.info-item {
-  border-bottom: 2px solid #f2f2f2;
-  position: relative;
-  height: 50px;
-  padding-top: 15px;
-}
+		&-input {
+			display: flex;
+			align-items: center;
+			font-size: 14px;
+			color: #333;
+			height: 20px;
+			line-height: 20px;
+			width: 60%;
 
-.info-item-input {
-  display: flex;
-  align-items: center;
-  font-size: 14px;
-  color: #333;
-  height: 20px;
-  line-height: 20px;
-  width: 60%;
-}
-
-.info-item-input::-webkit-input-placeholder {
-  color: #999;
-  font-size: 14px;
-}
-
-.info-item-input::after {
-  border: none;
-}
-
-.info-item-btn {
-  position: absolute;
-  right: 0;
-  top: 13px;
-  width: 67px;
-  height: 23px;
-  line-height: 23px;
-  border: 1px solid #999;
-  border-radius: 3px;
-  color: #999;
-  font-size: 10px;
-  text-align: center;
+			&::-webkit-input-placeholder{
+				color: #999;
+  				font-size: 14px;
+			}
+			&:after {
+				border: none;
+			}
+		}
+		&-btn {
+			position: absolute;
+			right: 0;
+			top: 13px;
+			width: 67px;
+			height: 23px;
+			line-height: 23px;
+			border: 1px solid #999;
+			border-radius: 3px;
+			color: #999;
+			font-size: 10px;
+			text-align: center;
+		}
+	}
 }
 
 .activeCode {
