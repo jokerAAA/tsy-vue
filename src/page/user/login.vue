@@ -26,6 +26,7 @@
 import Header from "@/components/common/header";
 
 import axios from "@/utils/axios";
+import qs from 'qs';
 
 export default {
 	data() {
@@ -33,7 +34,7 @@ export default {
 			activeCode: false,
 			activeLogin: false,
 			text: '获取验证码',
-			tel: '',
+			tel: '13183825976',
 			code: ''
 		};
 	},
@@ -72,8 +73,17 @@ export default {
 		},
 
 		getCode() {
-			console.log("code");
-			const url = '/api/user/send-login-sms';
+			const tel = this.tel;
+			axios({
+				method:'post',
+				url:'/pass/api/user/send-login-sms',
+				data:qs.stringify({
+					mobile:tel
+				})
+			})
+			.then((res) => {
+				console.log(res);
+			})
 		},
 		
 		login() {

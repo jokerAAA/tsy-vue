@@ -18,6 +18,14 @@ module.exports = {
         pathRewrite: {
           '^/api': '/' //本身的接口地址没有 '/api' 这种通用前缀，所以要rewrite，如果本身有则去掉  
         }
+      },
+      '/pass': {
+        target: 'http://cdt0-passport.taoshouyou.com',
+        changeOrigin: true, 
+        secure: false,
+        pathRewrite: {
+          '^/pass': '/' 
+        }
       }
     },
 

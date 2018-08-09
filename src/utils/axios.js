@@ -11,9 +11,14 @@ import {
 } from 'mint-ui';
 import router from '@/router';
 
+axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
 
 axios.interceptors.request.use(config => {
 	Indicator.open();
+	
+	if(config.method == 'post' || config.method == 'POST') {
+		config.headers['Content-Type'] = 'application/x-www-form-urlencoded';
+	}
 	/* 处理cookie */
 	let cookie = localStorage.getItem('cookie');
 	if(!cookie) {
@@ -52,7 +57,8 @@ axios.interceptors.response.use(res => { // 响应成功关闭loading
 		cookieNew = Object.assign({}, cookie, cookieNew);
 	};
 	cookieNew = JSON.stringify(cookieNew);
-	localStorage.setItem('cookie', cookieNew);
+	console.log(cookieNew);
+	if(cookieNew && cookieNew != 'undefined') localStorage.setItem('cookie', cookieNew);
 
 	if (res.data.errcode == 0) {
 		return res;
