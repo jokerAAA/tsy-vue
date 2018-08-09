@@ -34,7 +34,7 @@ export default {
 			activeCode: false,
 			activeLogin: false,
 			text: '获取验证码',
-			tel: '13183825976',
+			tel: '',
 			code: ''
 		};
 	},
@@ -87,7 +87,19 @@ export default {
 		},
 		
 		login() {
-			console.log("login");
+			const tel = this.tel;
+			const code = this.code;
+			axios({
+				method:'post',
+				url:'/pass/api/miniprogram/login-by-sms',
+				data:qs.stringify({
+					mobile: tel,
+					smsverifycode: code
+				})
+			})
+			.then((res) => {
+				console.log(res);
+			})
 		}
 	}
 };
